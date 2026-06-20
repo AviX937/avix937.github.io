@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="980" viewBox="0 0 800 980">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a860ff" stop-opacity="0.35"/>
+      <stop offset="0.55" stop-color="#ff6fa9" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#101114" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="980" rx="36" fill="url(#g)"/>
+  <rect x="64" y="74" width="672" height="832" rx="28" fill="rgba(255,255,255,0.22)"/>
+  <g fill="rgba(16,17,20,0.70)" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="24" letter-spacing="2">
+    <text x="96" y="160">PORTRAIT</text>
+    <text x="96" y="208">PLACEHOLDER</text>
+  </g>
+  <path d="M234 690c0-98 78-176 174-176s174 78 174 176v76H234v-76z" fill="rgba(16,17,20,0.18)"/>
+  <circle cx="408" cy="430" r="168" fill="rgba(16,17,20,0.14)"/>
+</svg>
+

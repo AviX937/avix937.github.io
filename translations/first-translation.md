@@ -2,7 +2,7 @@
 title: "Перевод 1"
 ---
 
-В этом переводе можно использовать весь синтаксис Markdown.
+Короткий пример перевода/текста, чтобы показать типографику и рендеринг Markdown на сайте.
 
 ## Заголовок второго уровня
 
@@ -14,20 +14,13 @@ title: "Перевод 1"
 
 Встроенное изображение:
 
-![Пример изображения](/assets/example-image.png)
+![Пример изображения]({{ '/assets/images/project-1.svg' | relative_url }})
 
 Ссылка на внешний ресурс: [Текст ссылки](https://example.com)
 
 ### Вставка видео с YouTube
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-### Локальное видео
-
-<video controls width="100%">
-  <source src="/assets/demo.mp4" type="video/mp4">
-  Ваш браузер не поддерживает видео.
-</video>
 
 ### Таблица
 

@@ -1,23 +1,22 @@
-const projects = [
+window.projects = [
   {
     id: 1,
     category: "design",
-    thumb: "https://via.placeholder.com/600x400?text=Project+1",
-    full: "https://via.placeholder.com/1200x800?text=Project+1+Full",
+    thumb: "assets/images/project-1.svg",
+    full: "assets/images/project-1.svg",
     titleRu: "Проект 1",
-    descRu: "Короткое описание проекта 1.",
+    descRu: "Короткое описание — что сделано, роль и результат в одной строке.",
     titleEn: "Project 1",
-    descEn: "Short description of project 1."
+    descEn: "One-line summary of what was delivered, your role, and the outcome."
   },
   {
     id: 2,
     category: "web",
-    thumb: "https://via.placeholder.com/600x400?text=Project+2",
-    full: "https://via.placeholder.com/1200x800?text=Project+2+Full",
+    thumb: "assets/images/project-2.svg",
+    full: "assets/images/project-2.svg",
     titleRu: "Проект 2",
-    descRu: "Описание второго проекта.",
+    descRu: "Короткое описание — масштаб, контекст и ключевая польза.",
     titleEn: "Project 2",
-    descEn: "Description of the second project."
+    descEn: "Short description — scope, context, and key impact."
   }
-  // Добавляйте объекты по аналогии
 ];

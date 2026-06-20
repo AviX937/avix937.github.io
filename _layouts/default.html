@@ -3,24 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Персональный сайт-портфолио.">
-  <title>{{ page.title | default: "Ваше Имя" }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: 'Персональный сайт-портфолио.' }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | default: 'Персональный сайт-портфолио.' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = localStorage.getItem('site-theme');
+      var dark = theme ? theme === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.documentElement.lang = localStorage.getItem('site-lang') || 'ru';
+      window.__SITE_BASEURL__ = "{{ '/' | relative_url }}";
+    })();
+  </script>
 </head>
-<body class="font-mono">
+<body>
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="{{ '/' | relative_url }}" class="logo" data-i18n="logo">ИмяФамилия</a>
       <div class="header-nav" id="header-nav">
+        <a href="{{ '/#projects' | relative_url }}" data-i18n="nav.projects">Проекты</a>
         <a href="{{ '/#about' | relative_url }}" data-i18n="nav.about">Обо мне</a>
-        <a href="{{ '/#portfolio' | relative_url }}" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="{{ '/#services' | relative_url }}" data-i18n="nav.services">Услуги</a>
+        <a href="{{ '/#publications' | relative_url }}" data-i18n="nav.publications">Публикации</a>
         <a href="{{ '/#contact' | relative_url }}" data-i18n="nav.contact">Контакты</a>
       </div>
       <div class="header-actions">
-        <a href="{{ '/assets/resume_ru.pdf' | relative_url }}" download class="resume-link" data-i18n="nav.resume">Резюме</a>
+        <a
+          href="{{ '/assets/resume_ru.pdf' | relative_url }}"
+          data-href-ru="{{ '/assets/resume_ru.pdf' | relative_url }}"
+          data-href-en="{{ '/assets/resume_en.pdf' | relative_url }}"
+          download
+          class="resume-link"
+          data-i18n="nav.resume"
+        >Резюме</a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme"></button>
         <button id="lang-toggle" class="lang-btn" aria-label="Switch language">EN</button>
       </div>
     </div>
@@ -36,7 +56,23 @@
     </div>
   </footer>
 
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" type="button" data-modal-close aria-label="Close">×</button>
+      <div class="modal__media">
+        <img id="modal-image" alt="">
+      </div>
+      <div class="modal__body">
+        <div class="modal__title" id="modal-title"></div>
+        <div class="modal__desc" id="modal-desc"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="{{ '/js/i18n.js' | relative_url }}"></script>
+  <script src="{{ '/data/portfolio.js' | relative_url }}"></script>
+  <script src="{{ '/data/publications.js' | relative_url }}"></script>
   <script src="{{ '/js/main.js' | relative_url }}"></script>
 </body>
 </html>

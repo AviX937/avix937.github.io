@@ -4,64 +4,112 @@ title: "Главная"
 ---
 
 <section id="home" class="hero">
-  <div class="container">
-    <h1 data-i18n="hero.title">Ваше Имя</h1>
-    <p class="hero-subtitle" data-i18n="hero.subtitle">Коротко о роде занятий.</p>
-    <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer" class="cta" data-i18n="hero.cta">Написать в Telegram</a>
-  </div>
-</section>
+  <div class="container hero__container">
+    <div class="hero__grid">
+      <div class="hero__left">
+        <h1 class="hero__title">
+          <span data-i18n="hero.nameLine1">Ваше</span><br>
+          <span data-i18n="hero.nameLine2">Имя</span>
+        </h1>
+        <div class="hero__portrait" aria-hidden="true">
+          <img src="{{ '/assets/images/portrait.svg' | relative_url }}" alt="" loading="eager">
+        </div>
+      </div>
 
-<nav id="toc" class="toc">
-  <div class="container">
-    <ul>
-      <li><a href="#about">Обо мне</a></li>
-      <li><a href="#portfolio">Портфолио</a></li>
-      <li><a href="#contact">Контакты</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="hero__right">
+        <p class="lead" data-i18n="hero.lead">Короткий лид о специализации и фокусе.</p>
 
-<section id="about" class="about section">
-  <div class="container">
-    <h2 data-i18n="about.heading">Обо мне</h2>
-    <div class="about__grid">
-      <div class="about__text" data-i18n="about.text">Рассказ о себе.</div>
-      <!-- <img src="assets/photo.jpg" alt="Фото" class="about__photo"> -->
-    </div>
-  </div>
-</section>
+        <div class="editorial">
+          <div class="editorial__label" data-i18n="hero.certLabel">Сертификация:</div>
+          <ul class="rule-list rule-list--compact">
+            <li data-i18n="hero.cert1">Example Certification 1</li>
+            <li data-i18n="hero.cert2">Example Certification 2</li>
+            <li data-i18n="hero.cert3">Example Certification 3</li>
+          </ul>
+        </div>
 
-<section id="portfolio" class="portfolio section">
-  <div class="container">
-    <h2 data-i18n="portfolio.heading">Портфолио</h2>
-
-    <div class="portfolio-category">
-      <h3 data-i18n="portfolio.design">Дизайн</h3>
-      <a href="https://dribbble.com/yourprofile" target="_blank" rel="noopener noreferrer" class="dribbble-btn">Dribbble</a>
-    </div>
-
-    <div class="portfolio-category">
-      <h3 data-i18n="portfolio.translations">Переводы</h3>
-      <div class="translations-grid">
-        <a href="{{ '/translations/first-translation' | relative_url }}" class="translation-card">
-          <h4>Перевод 1</h4>
-          <p>Краткое описание.</p>
-        </a>
-        <a href="{{ '/translations/second-translation' | relative_url }}" class="translation-card">
-          <h4>Перевод 2</h4>
-          <p>Краткое описание.</p>
-        </a>
+        <div class="hero__links">
+          <a class="text-link" href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer" data-i18n="hero.linkTelegram">Telegram</a>
+          <a class="text-link" href="mailto:mail@example.com" data-i18n="hero.linkEmail">mail@example.com</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact section">
+<nav id="toc" class="toc" aria-label="Sections">
   <div class="container">
-    <h2 data-i18n="contact.heading">Контакты</h2>
-    <div class="contact__links">
-      <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer" class="contact-link tg" data-i18n="contact.tg">Telegram: @yourusername</a>
-      <a href="mailto:mail@example.com" class="contact-link email">mail@example.com</a>
+    <ul class="toc__list">
+      <li><a href="#projects" data-i18n="nav.projects">Проекты</a></li>
+      <li><a href="#about" data-i18n="nav.about">Обо мне</a></li>
+      <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+      <li><a href="#publications" data-i18n="nav.publications">Публикации</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Контакты</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="about" class="section">
+  <div class="container section__grid">
+    <h2 class="section__title" data-i18n="about.heading">Обо мне</h2>
+    <div class="section__content">
+      <div class="prose" data-i18n="about.text">Рассказ о себе.</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container section__grid">
+    <h2 class="section__title" data-i18n="services.heading">Мои услуги</h2>
+    <div class="section__content">
+      <ul class="rule-list">
+        <li data-i18n="services.item1">Проектирование и настройка систем под площадку и задачу.</li>
+        <li data-i18n="services.item2">Дизайн и оптимизация решений для концертов, конференций и инсталляций.</li>
+        <li data-i18n="services.item3">Технические схемы и документация (планы, спецификации, 3D).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container section__grid">
+    <h2 class="section__title" data-i18n="projects.heading">Свежие проекты</h2>
+    <div class="section__content">
+      <div class="projects" id="projects-grid" aria-label="Projects"></div>
+      <div class="meta-block">
+        <div class="meta-block__label" data-i18n="translations.heading">Переводы</div>
+        <div class="meta-block__links">
+          <a class="text-link" href="{{ '/translations/first-translation' | relative_url }}" data-i18n="translations.first">Перевод 1</a>
+          <a class="text-link" href="{{ '/translations/second-translation' | relative_url }}" data-i18n="translations.second">Перевод 2</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="section">
+  <div class="container section__grid">
+    <h2 class="section__title" data-i18n="publications.heading">Публикации</h2>
+    <div class="section__content">
+      <div class="carousel">
+        <button class="carousel__btn" type="button" id="pub-prev" aria-label="Previous">←</button>
+        <div class="carousel__viewport" id="publications-viewport">
+          <div class="carousel__track" id="publications-track" aria-label="Publications"></div>
+        </div>
+        <button class="carousel__btn" type="button" id="pub-next" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container section__grid">
+    <h2 class="section__title" data-i18n="contact.heading">Контакты</h2>
+    <div class="section__content">
+      <div class="contact__links">
+        <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer" class="text-link" data-i18n="contact.tg">Telegram: @yourusername</a>
+        <a href="mailto:mail@example.com" class="text-link">mail@example.com</a>
+      </div>
     </div>
   </div>
 </section>

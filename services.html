@@ -1,57 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Услуги и специализация.">
-  <title>Услуги / Services</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container header__inner">
-      <a href="index.html" class="logo" data-i18n="logo">ИмяФамилия</a>
-      <nav class="nav">
-        <a href="about.html" data-i18n="nav.about">Обо мне</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio">Портфолио</a>
-        <a href="services.html" data-i18n="nav.services">Услуги</a>
-        <a href="contact.html" data-i18n="nav.contact">Контакты</a>
-        <a href="assets/resume_ru.pdf" download class="resume-link" data-i18n="nav.resume">Резюме</a>
-      </nav>
-      <button id="lang-toggle" class="lang-btn" aria-label="Switch language">EN</button>
-    </div>
-  </header>
+---
+layout: default
+title: "Услуги"
+permalink: /services.html
+---
 
-  <main>
-    <section class="services section">
-      <div class="container">
-        <h2 data-i18n="services.heading">Услуги</h2>
-        <div class="services__grid">
-          <div class="service-card">
-            <h3 data-i18n="services.item1.title">Услуга 1</h3>
-            <p data-i18n="services.item1.desc">Описание услуги 1.</p>
-          </div>
-          <div class="service-card">
-            <h3 data-i18n="services.item2.title">Услуга 2</h3>
-            <p data-i18n="services.item2.desc">Описание услуги 2.</p>
-          </div>
-          <div class="service-card">
-            <h3 data-i18n="services.item3.title">Услуга 3</h3>
-            <p data-i18n="services.item3.desc">Описание услуги 3.</p>
-          </div>
+<script>
+  location.replace("{{ '/#services' | relative_url }}");
+</script>
+<noscript>
+  <section class="section">
+    <div class="container section__grid">
+      <h1 class="section__title">Услуги</h1>
+      <div class="section__content">
+        <div class="prose">
+          Перейти на <a class="text-link" href="{{ '/#services' | relative_url }}">секцию «Услуги»</a>.
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Имя Фамилия</p>
     </div>
-  </footer>
-
-  <script src="js/i18n.js"></script>
-  <script src="data/portfolio.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+  </section>
+</noscript>
